@@ -3,8 +3,8 @@
   "manifest_version": 2,
 
   "name": "libdoge",
-  "description": "such good doge",
-  "version": "0.1.6",
+  "description": "such god doge",
+  "version": "0.1.7",
 
   "icons": {
     "48" : "img/icon-48.png",
@@ -12,7 +12,7 @@
   },
   "background": {
     "scripts": [
-      "chrome_load_doge.js"
+      "run.js"
     ],
     "persistent": false
   },

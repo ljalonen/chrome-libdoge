@@ -1,7 +1,6 @@
-var loaded = false;
 chrome.browserAction.onClicked.addListener(function(tab) {
-  if (!loaded) {
+  if (typeof LIBDOGE == 'undefined') {
     chrome.tabs.executeScript(null, { file: "libdoge.mod.min.js" });
-    loaded = true;
   }
+  chrome.tabs.executeScript({code: 'LIBDOGE.controller.buyDoge()'});
 });
