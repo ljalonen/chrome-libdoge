@@ -1,6 +1,14 @@
+
+var loaded = false;
 chrome.browserAction.onClicked.addListener(function(tab) {
-  if (typeof LIBDOGE == 'undefined') {
-    chrome.tabs.executeScript(null, { file: "libdoge.mod.min.js" });
+  if (!loaded) {
+    loaded = true;
+    chrome.tabs.executeScript(null, 
+      { file: "libdoge.mod.min.js" }, function() {
+        chrome.tabs.executeScript({code: 'controller.buyDoge();'});
+      });
   }
-  chrome.tabs.executeScript({code: 'LIBDOGE.controller.buyDoge()'});
+  else {
+    chrome.tabs.executeScript({code: 'controller.buyDoge();'});
+  }
 });
