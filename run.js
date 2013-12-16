@@ -4,7 +4,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   if (!loaded) {
     loaded = true;
     chrome.tabs.executeScript(null, 
-      { file: "libdoge.mod.min.js" }, function() {
+      { file: "libdoge.min.js" }, function() {
         chrome.tabs.executeScript({code: 'controller.buyDoge();'});
       });
   }
